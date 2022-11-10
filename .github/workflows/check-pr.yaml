@@ -11,10 +11,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14.19.0'
-      - run: npm i
+    
       - run: cd ./backend
+      - run: npm i
       - run: pwd
       - run: ls
       - run: npm run lint
       - run: cd ../frontend
+      - run: npm i
+      - run: pwd
+      - run: ls
       - run: npm run lint
