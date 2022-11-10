@@ -12,6 +12,8 @@ jobs:
         with:
           node-version: '14.19.0'
       - run: cd ./backend
+      - run: pwd
+      - run: ls
       - run: npm run lint
       - run: cd ../frontend
       - run: npm run lint
