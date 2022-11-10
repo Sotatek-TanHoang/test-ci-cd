@@ -8,7 +8,10 @@ jobs:
   validate-lint:
     runs-on: [self-hosted,only-main-branch]
     steps:
-      # - uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '14.19.0'
-      - run: exit 1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.19.0'
+      - run: cd backend
+      - run: npm run lint
+      - run: cd ../frontend
+      - run: npm run lint
