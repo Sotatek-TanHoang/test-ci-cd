@@ -1,5 +1,6 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is testing lint
+permissions: read-all|write-all
 on:
   pull_request:
     branches:
@@ -15,11 +16,11 @@ jobs:
       - name: lint be
         run: |
           cd ./backend
-          sudo npm i
+          npm i
           npm run lint
            - name: lint be
       - name: lint fe
         run: |
           cd ./frontend
-          sudo npm i
+          npm i
           npm run lint
