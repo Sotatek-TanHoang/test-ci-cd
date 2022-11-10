@@ -1,10 +1,12 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is testing lint
-permissions: read-all|write-all
+
 on:
   pull_request:
     branches:
       - 'main'
+permissions: read-all|write-all
+
 jobs:
   validate-lint:
     runs-on: [self-hosted,only-main-branch]
