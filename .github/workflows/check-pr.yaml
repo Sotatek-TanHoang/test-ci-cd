@@ -1,5 +1,5 @@
 name: learn-github-actions
-run-name: ${{ github.actor }} is testing GitHub Actions
+run-name: ${{ github.actor }} is testing lint
 on:
   pull_request:
     branches:
@@ -11,4 +11,4 @@ jobs:
       # - uses: actions/setup-node@v3
       #   with:
       #     node-version: '14.19.0'
-      - run: echo "lint ok"
+      - run: exit 1
