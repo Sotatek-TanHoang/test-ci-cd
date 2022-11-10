@@ -12,13 +12,14 @@ jobs:
         with:
           node-version: '14.19.0'
     
-      - run: cd ./backend
-      - run: npm i
-      - run: pwd
-      - run: ls
-      - run: npm run lint
-      - run: cd ../frontend
-      - run: npm i
-      - run: pwd
-      - run: ls
-      - run: npm run lint
+      - name: lint be
+        run: |
+          cd ./backend
+          npm i
+          npm run lint
+           - name: lint be
+      - name: lint fe
+        run: |
+          cd ./frontend
+          npm i
+          npm run lint
