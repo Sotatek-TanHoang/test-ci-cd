@@ -11,6 +11,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14.19.0'
+      - run: npm i
       - run: cd ./backend
       - run: pwd
       - run: ls
