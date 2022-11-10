@@ -15,11 +15,11 @@ jobs:
       - name: lint be
         run: |
           cd ./backend
-          npm i
+          sudo npm i
           npm run lint
            - name: lint be
       - name: lint fe
         run: |
           cd ./frontend
-          npm i
+          sudo npm i
           npm run lint
