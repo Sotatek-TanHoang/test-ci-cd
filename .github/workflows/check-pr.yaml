@@ -1,14 +1,14 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is testing GitHub Actions
 on:
-  push:
+  pull_request:
     branches:
       - 'main'
 jobs:
-  test-ci-cd:
+  validate-lint:
     runs-on: [self-hosted,only-main-branch]
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14.19.0'
-      - run: docker-compose up -d
+      # - uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '14.19.0'
+      - run: echo "lint ok"
