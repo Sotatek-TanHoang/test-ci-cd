@@ -1,14 +1,27 @@
 name: learn-github-actions
-run-name: ${{ github.actor }} is testing GitHub Actions
+run-name: ${{ github.actor }} is testing lint
+
 on:
   pull_request:
     branches:
       - 'main'
+
 jobs:
   validate-lint:
     runs-on: [self-hosted,only-main-branch]
     steps:
-      # - uses: actions/setup-node@v3
-      #   with:
-      #     node-version: '14.19.0'
-      - run: echo "lint ok"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.19.0'
+    
+      - name: lint be
+        run: |
+          cd ./backend
+          npm i
+          npm run lint
+           - name: lint be
+      - name: lint fe
+        run: |
+          cd ./frontend
+          npm i
+          npm run lint
